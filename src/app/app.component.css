@@ -1,0 +1,84 @@
+
+
+
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+}/*Все задачи*/
+
+
+.container-main{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+} /*Блок не готовых задач*/
+
+.undone{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+} /*Не готовые задачи*/
+
+.line{
+    border: solid black 0.25px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+} /*Линия*/
+
+.container-ready{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+} /*Блок готовых задач*/
+
+.done{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+} /*Не готовые задачи*/
+
+
+.done,.undone{
+   display: inline-flex;
+   cursor: pointer;
+} /*Пункты задач*/
+
+.circle-undone{
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border: dashed #FAEBD7 2.75px;
+} /* Блок задач (Не готовые кружки)*/
+.circle-done{
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border: dashed #FAEBD7 2.75px;
+    background-color: #FAEBD7;
+}/* Блок задач (Готовые кружки)*/
+
+.undone:hover > .circle-undone{
+    background-color: #FAEBD7;
+}/*(Не готовые кружки)*/
+
+.done:hover > .circle-done {
+    background-color: transparent;
+}/* (Готовые кружки)*/
