@@ -1,6 +1,12 @@
 
 
-
+.List{
+    list-style-type: none;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
 
 .title{
     display: flex;
@@ -18,7 +24,6 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    gap: 5px;
 }/*Все задачи*/
 
 
@@ -42,19 +47,11 @@
     align-items: center;
 } /*Линия*/
 
-.container-ready{
-    display: inline-flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-} /*Блок готовых задач*/
-
 .done{
     display: inline-flex;
     align-items: flex-start;
     gap: 10px;
-} /*Не готовые задачи*/
-
+ } /*Не готовые задачи */
 
 .done,.undone{
    display: inline-flex;

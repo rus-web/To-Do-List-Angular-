@@ -3,16 +3,20 @@
 <div class="all">
   <h1 class="title">To-Do List</h1>
   <div class="container">
-          <div class="container-main" id="container-main">         
-              <div class="task undone"><div class="mark circle-undone"></div>Домашние дела</div>
-              <div class="task undone"><div class="mark circle-undone"></div>Разобраться с циклами JS</div>
-              <div class="task undone"><div class="mark circle-undone"></div>Покушать</div>
-              <div class="task undone"><div class="mark circle-undone"></div>Изучить что такое DOM</div>
+          <div class="container-main" id="container-main">  
+            <ul class="List">   
+              <li *ngFor="let taskUndone of tasksUndone">
+                <div class="task undone"><div class="mark circle-undone"></div><span>{{taskUndone}}</span></div>
+              </li>
+            </ul>    
           </div>
       <hr class="line">
           <div class="container-ready" id = "container-ready">
-              <div class="task done"><div class="mark circle-done"></div>Повторение CSS и HTML</div>
-              <div class="task done"><div class="mark circle-done"></div>Повторение HTML</div>
+            <ul class="List">
+                <li *ngFor="let taskDone of tasksDone">
+                    <div class="task done"><div class="mark circle-done"></div><span>{{taskDone}}</span></div>
+                </li>
+            </ul>  
           </div>
   </div>
 </div>
