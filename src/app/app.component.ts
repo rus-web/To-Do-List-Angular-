@@ -14,16 +14,15 @@ export class AppComponent {
   tasksDone = ["Повторение CSS и HTML","Повторение HTML"]
   
   statusChange(taskStatus: string, task: string){
-    
+    let indexUndone = this.tasksUndone.indexOf(task)// Индекс Undone дел
+    let indexDone = this.tasksDone.indexOf(task) // Индекс Done дел 
       if(taskStatus==="undone"){
-        this.tasksUndone.splice(this.tasksUndone.indexOf(task),1)
+        this.tasksUndone.splice(indexUndone,1)
         this.tasksDone.push(task)
       } else{
-      this.tasksDone.splice(this.tasksDone.indexOf(task),1)
+      this.tasksDone.splice(indexDone,1)
       this.tasksUndone.push(task)
       }
-    
-
   }
 }
 
