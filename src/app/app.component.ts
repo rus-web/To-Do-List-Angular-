@@ -10,19 +10,22 @@ import { NgFor } from '@angular/common';
 
 export class AppComponent {
   title = 'To-Do-List';
-  tasksUndone = ["Домашние дела","Разобраться с циклами JS","Покушать","Изучить что такое DOM"]
-  tasksDone = ["Повторение CSS и HTML","Повторение HTML"]
+  tasksUndone = ["Домашние дела","Разобраться с циклами JS","Покушать","Изучить что такое DOM"];
+  tasksDone = ["Повторение CSS и HTML","Повторение HTML"];
   
-  statusChange(taskStatus: string, task: string){
-    let indexUndone = this.tasksUndone.indexOf(task)// Индекс Undone дел
-    let indexDone = this.tasksDone.indexOf(task) // Индекс Done дел 
+  statusChange(taskStatus: string, task: string):
+    void {
+      let index;
       if(taskStatus==="undone"){
-        this.tasksUndone.splice(indexUndone,1)
-        this.tasksDone.push(task)
+        index = this.tasksUndone.indexOf(task);
+        this.tasksUndone.splice(index,1);
+        this.tasksDone.push(task);
       } else{
-      this.tasksDone.splice(indexDone,1)
-      this.tasksUndone.push(task)
-      }
+        index = this.tasksDone.indexOf(task);
+        this.tasksDone.splice(index,1);
+        this.tasksUndone.push(task);
+        }
+     } 
   }
-}
+
 
