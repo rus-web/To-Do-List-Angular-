@@ -5,7 +5,7 @@
   <div class="container">
           <div class="container-main" id="container-main">  
             <ul class="List">   
-              <li *ngFor="let taskUndone of tasksUndone" (click)="statusChange('undone', taskUndone)">
+              <li *ngFor="let taskUndone of tasksUndone" (click)="statusChange('undone', taskUndone)" >
                 <div class="task undone" ><div class="mark circle-undone"></div><span>{{taskUndone}}</span></div>
               </li>
             </ul>    

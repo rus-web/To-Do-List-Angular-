@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { WebsocketService} from './websocket.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,6 @@ export class AppComponent {
   title = 'To-Do-List';
   tasksUndone = ["Домашние дела","Разобраться с циклами JS","Покушать","Изучить что такое DOM"];
   tasksDone = ["Повторение CSS и HTML","Повторение HTML"];
-  
   statusChange(taskStatus: string, task: string):
     void {
       let index;
