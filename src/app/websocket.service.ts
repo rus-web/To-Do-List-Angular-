@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
   providedIn: 'root'
 })
 
+
 export class WebsocketService {
+
   private socket!: WebSocket;
   constructor() { 
-     const connection = new WebSocket("ws://localhost:9000");
-  }
-  sendWS(task: object):
-    void {
-      this.socket.send(JSON.stringify(task))
-     } 
+  this.socket = new WebSocket("ws://localhost:8080");
+  this.socket.onopen = (event) => {  
+    console.log("Connection opened");
+  };
+  this.socket.onerror = (error) => {
+    console.log(`WebSocket Error: ${error}`);
+  };
+  this.socket.onclose = (event) => {
+    console.log("Connection closed");
+  };
+  this.socket.onmessage = (message) =>{ 
+    console.log("Server sent:", message.data);
+  };
 }
-
-
-
-
+  sendWS(task: object): 
+  void{
+    this.socket.send(JSON.stringify(task))
+  }
+}
