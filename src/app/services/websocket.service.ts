@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable,Subject } from 'rxjs';
-import { AppComponent } from './app.component';
+import { AppComponent } from '../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class WebsocketService {
 
   private socket!: WebSocket;
   constructor() { 
-  this.socket = new WebSocket("ws://localhost:8080");
+  this.socket = new WebSocket("ws://localhost:9000");
   this.socket.onopen = (event) => {  
     console.log("Connection opened");
   };
