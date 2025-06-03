@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ITaskData } from '../models/iTaskData.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,9 @@ export class WebsocketService {
   };
 }
 
-  sendWS(task: object): 
+  sendWS(data: ITaskData): 
   void{
-    this.socket.send(JSON.stringify(task))
+    this.socket.send(JSON.stringify(data))
   };
 
   closeConnection(): 

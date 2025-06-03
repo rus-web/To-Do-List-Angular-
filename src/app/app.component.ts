@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WebsocketService } from './services/websocket.service';
-
+import { ITaskData } from './models/iTaskData.model';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +35,7 @@ export class AppComponent implements OnDestroy, OnInit {
       this.tasksUndone.splice(index, 1);
       this.tasksDone.push(task);
 
-      let obj = {
+      let obj: ITaskData = {
         status: "done",
         text: task
       };
@@ -46,7 +46,7 @@ export class AppComponent implements OnDestroy, OnInit {
       this.tasksDone.splice(index, 1);
       this.tasksUndone.push(task);
 
-      let obj = {
+      let obj: ITaskData = {
         status: "undone",
         text: task
       };
