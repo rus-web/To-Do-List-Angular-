@@ -13,19 +13,25 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private wsService: WebsocketService) { }
 
-
   ngOnInit(): void {
-     console.log('Инициализация прошла успешно')
+    console.log('Инициализация прошла успешно')
   };
 
   ngOnDestroy(): void {
   this.wsService.closeConnection()
   };
 
-
   title = 'To-Do-List';
   tasksUndone = ["Домашние дела", "Разобраться с циклами JS", "Покушать", "Изучить что такое DOM"];
   tasksDone = ["Повторение CSS и HTML", "Повторение HTML"];
+  newTaskText: string = '';
+  
+  addTask(): void {
+    if (this.newTaskText.trim()) { // Проверяем, что поле не пустое
+      this.tasksUndone.push(this.newTaskText.trim());
+      this.newTaskText = ''; // Очищаем поле ввода
+    };
+  };
 
   statusChange(taskStatus: string, task: string): void {
     let index;
@@ -53,8 +59,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
       this.wsService.sendWS(obj)
     };
-
-  }
+  };
 }
 
 

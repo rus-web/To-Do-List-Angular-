@@ -31,6 +31,6 @@ export class WebsocketService {
 
   closeConnection(): 
   void{
-    this.socket.close;
+    this.socket.close();
   };
 }
